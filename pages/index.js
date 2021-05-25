@@ -1,22 +1,23 @@
-// @generated: @expo/next-adapter@2.1.74
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import useCachedResources from '../hooks/useCachedResources';
+import useColorScheme from '../hooks/useColorScheme';
+import Navigation from '../navigation';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
-    </View>
-  );
-}
+  const isLoadingComplete = useCachedResources();
+  const colorScheme = useColorScheme();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 16,
-  },
-});
+  if (!isLoadingComplete) {
+    return null;
+  } else {
+    return (
+      <SafeAreaProvider>
+        <Navigation colorScheme={colorScheme} />
+        <StatusBar />
+      </SafeAreaProvider>
+    );
+  }
+}
