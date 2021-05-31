@@ -90,20 +90,20 @@ To run the app on simulator or your device (make sure you connect your device to
 react-native run-ios
 
 # to run in simulator 
-react-native run-ios --simulator="iPhone 12"
+npx react-native run-ios --simulator="iPhone 12"
 
 # to run in production mode
-react-native run-ios --configuration Release
+npx react-native run-ios --configuration Release
 ```
 
 ### Native Android
 To run the app on simulator or your device. One can use [Genymotion](https://www.genymotion.com/) for Android simulator.
 
 ```bash
-react-native run-android
+npx react-native run-android
 
 # to run in production mode 
-react-native run-android --variant=release
+npx react-native run-android --variant=release
 ```
 
 
