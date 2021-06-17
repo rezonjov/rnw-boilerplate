@@ -12,7 +12,4 @@ export default class ARKitOneView extends React.PureComponent<props> {
   }
 }
 
-const RNTARKitOneView = requireNativeComponent('RNTARKitOneView'); 
-RNTARKitOneView.propTypes = {
-   styles: PropTypes.object
-};
+const RNTARKitOneView = requireNativeComponent('RNTARKitOneView');  

@@ -12,7 +12,4 @@ export default class ARKitTwoView extends React.PureComponent<props> {
   }
 }
 
-const RNTARKitTwoView = requireNativeComponent('RNTARKitTwoView'); 
-RNTARKitTwoView.propTypes = {
-   styles: PropTypes.object
-};
+const RNTARKitTwoView = requireNativeComponent('RNTARKitTwoView');  

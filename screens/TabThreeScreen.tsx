@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import ARKitOneView from '../foundation/ARKitOne';
+import ARKitTwoView from '../foundation/ARKitTwo';
+import ARKitOneView from '../foundation/ARKitOne'; '../foundation/ARKitOne';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
@@ -12,7 +13,8 @@ export default function TabThreeScreen() {
     //   <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
     // </View>
 
-    <ARKitOneView style={styles.container} />
+    <ARKitTwoView style={styles.container} />
+    // <ARKitOneView style={styles.container} />
   );
 }
 
