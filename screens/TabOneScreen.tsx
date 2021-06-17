@@ -16,14 +16,19 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Native Module test</Text>
       <Button
         title="Click to invoke your native module!"
         color="#841584"
         onPress={onPress}
       />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <Text 
+          lightColor="rgba(0,0,0,0.8)"
+          darkColor="rgba(255,255,255,0.8)">
+          Clicking the above text will trigger a native module call (it will do a console.log). Clicking this inside expo won't output anything since we can't run native module inside expo
+        </Text>
+
     </View>
   );
 } 
