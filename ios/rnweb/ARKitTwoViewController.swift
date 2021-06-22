@@ -8,11 +8,14 @@
 import UIKit
 import SceneKit
 import ARKit
+import React
 
 class ARKitTwoViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    
+    var nativeEventCallback: RCTBubblingEventBlock?
+   
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,17 +51,21 @@ class ARKitTwoViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touchLocation = touches.first?.location(in: sceneView) {
+            let hitTestResults = sceneView.hitTest(touchLocation, types: .featurePoint)
+            if let hitResult = hitTestResults.first {
+              nativeEventCallback!(["X":  hitResult.worldTransform.columns.3.x,  " Y: ": hitResult.worldTransform.columns.3.y, "Z: " : hitResult.worldTransform.columns.3.z])
+            
+            }
+        }
     }
-*/
     
+    func setNativeEventCallback(eventCallback: RCTBubblingEventBlock? ) { 
+      self.nativeEventCallback = eventCallback;
+    }
+   
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         

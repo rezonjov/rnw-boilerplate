@@ -46,14 +46,7 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="cube-outline" color={color} />,
         }}
       />
-
-      <BottomTab.Screen
-        name="ARKit Three"
-        component={TabFourNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="cube-outline" color={color} />,
-        }}
-      />  
+ 
     </BottomTab.Navigator>
   );
 }

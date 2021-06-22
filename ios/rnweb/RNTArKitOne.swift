@@ -1,9 +1,10 @@
 //
-//  CustomView.swift
-//  rnplay
+//  RNTARKitOne.swift
+//  rnweb
 //
-//  Created by Rezon Jovian on 6/15/21.
+//  Created by Rezon Jovian on 6/17/21.
 //
+// ARKit integration to React Native using Native UI component
 
 import Foundation
 import UIKit
@@ -58,16 +59,4 @@ class RNTARKitOneViewManager: RCTViewManager {
   override func view() -> UIView! {
     return RNTARKitOneView()
   }
-
-//  override func view() -> UIView! {
-//      //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Sample" bundle: nil];
-//      //  //
-//      //    UIViewController *vc = [storyboard instantiateInitialViewController];
-//
-//      let storyboard = UIStoryboard(name: "main", bundle: nil)
-//      let vc = storyboard.instantiateInitialViewController()!
-//      return vc.view;
-//    }
-  
-  
 }

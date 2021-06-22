@@ -6,16 +6,15 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabThreeScreen() {
-  return (
-    // <View style={styles.container}>
-    //   <Text style={styles.title}>Tab Two</Text>
-    //   <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    //   <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
-    // </View>
+  
+  const onEvent = (event:any) => {
+    console.log('Event passed from Native', event); 
+    // process event here
+  };
 
-    <ARKitTwoView style={styles.container} />
-    // <ARKitOneView style={styles.container} />
-  );
+  return ( 
+    <ARKitTwoView style={styles.container} title="ARKit Title passed from React Native" onNativeEvent={onEvent} /> 
+  ); 
 }
 
 const styles = StyleSheet.create({
