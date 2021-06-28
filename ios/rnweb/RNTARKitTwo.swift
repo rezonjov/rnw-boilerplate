@@ -16,11 +16,12 @@ import React
 @objc (RNTARKitTwoView)
 class RNTARKitTwoView: UIView, ARSCNViewDelegate {
   
-  @objc var title:NSString = "" {
+    @objc var title:NSString = "" {
        didSet {
-        NSLog("Native Init", title)
+        NSLog("Native Log")
+        NSLog(title as String)
        }
-   }
+    }
   
     @objc var onNativeEvent: RCTBubblingEventBlock?
     weak var ARKitTwoVC: ARKitTwoViewController?
@@ -80,7 +81,6 @@ extension UIView {
 
 @objc (RNTARKitTwoViewManager)
 class RNTARKitTwoViewManager: RCTViewManager {
- 
   
   override static func requiresMainQueueSetup() -> Bool {
     return true

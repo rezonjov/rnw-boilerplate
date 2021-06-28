@@ -1,21 +1,22 @@
 import * as React from 'react';
-import { StyleSheet, Button,NativeModules } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import CalendarModule from '../foundation/CalendarModule';
 
-export default function TabOneScreen() {
-  const { CalendarModule } = NativeModules;
+export default function TabOneScreen() { 
   
   const onPress = () => {
     console.log('We will invoke the native module here!');
     if(CalendarModule) {
+      console.log("Native Module found!!! ")
       CalendarModule.createCalendarEvent('testName', 'testLocation');
     }
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <Text style={styles.title}>Native Module test</Text>
       <Button
         title="Click to invoke your native module!"
