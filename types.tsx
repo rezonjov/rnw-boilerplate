@@ -13,6 +13,7 @@ export type BottomTabParamList = {
   'ARKit One': undefined;
   'ARKit Two': undefined;
   'ARKit Three': undefined;
+  'ARCore': undefined;
 };
 
 export type TabOneParamList = {

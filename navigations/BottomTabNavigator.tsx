@@ -46,6 +46,13 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="cube-outline" color={color} />,
         }}
       />
+      <BottomTab.Screen
+        name="ARCore"
+        component={TabFourNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="cube-outline" color={color} />,
+        }}
+      />
  
     </BottomTab.Navigator>
   );
